@@ -175,6 +175,7 @@ const BlogCard = ({
       <div className="grid grid-cols-2 gap-6">
         <div className="col-span-2">
           <div
+            id="blog-card"
             className={`card compact bg-base-100 ${
               loading || (articles && articles.length)
                 ? 'shadow bg-opacity-40'

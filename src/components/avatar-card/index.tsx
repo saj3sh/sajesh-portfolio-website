@@ -2,6 +2,7 @@ import { FALLBACK_IMAGE } from '../../constants';
 import { Profile } from '../../interfaces/profile';
 import { skeleton } from '../../utils';
 import LazyImage from '../lazy-image';
+import { Typewriter } from 'react-simple-typewriter';
 
 interface AvatarCardProps {
   profile: Profile | null;
@@ -25,7 +26,7 @@ const AvatarCard: React.FC<AvatarCardProps> = ({
   resumeFileUrl,
 }): JSX.Element => {
   return (
-    <div className="card shadow-lg compact bg-base-100">
+    <div id="avatar-card" className="card shadow-lg compact bg-base-100 glassy">
       <div className="grid place-items-center py-8">
         {loading || !profile ? (
           <div className="avatar opacity-90">
@@ -59,15 +60,23 @@ const AvatarCard: React.FC<AvatarCardProps> = ({
           </div>
         )}
         <div className="text-center mx-auto px-8">
-          <h5 className="font-bold text-2xl">
-            {loading || !profile ? (
-              skeleton({ widthCls: 'w-48', heightCls: 'h-8' })
-            ) : (
-              <span className="text-base-content opacity-70">
-                Sajesh Adhikari
-              </span>
-            )}
-          </h5>
+          <h5 className="name-text text-3xl mb-4">Sajesh Adhikari</h5>
+          <div className="mt-2 text-lg">
+            {/* <span className="text-base-content opacity-90 font-semibold">
+              I'm a{' '}
+            </span> */}
+            <span className="typewriter-text">
+              <Typewriter
+                words={['Senior Software Engineer', 'AI Enthusiast']}
+                loop={true}
+                cursor
+                cursorStyle="|"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={3000}
+              />
+            </span>
+          </div>
           <div className="mt-3 text-base-content text-opacity-60 font-mono">
             {loading || !profile
               ? skeleton({ widthCls: 'w-48', heightCls: 'h-5' })
@@ -83,7 +92,7 @@ const AvatarCard: React.FC<AvatarCardProps> = ({
             <a
               href={resumeFileUrl}
               target="_blank"
-              className="btn btn-outline btn-sm text-xs mt-6 opacity-50"
+              className="btn btn-outline btn-primary btn-sm text-xs mt-6 opacity-50"
               download
               rel="noreferrer"
             >

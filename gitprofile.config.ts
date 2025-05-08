@@ -104,7 +104,7 @@ const CONFIG = {
     email: 'saj3sh@gmail.com',
   },
   resume: {
-    fileUrl: 'public/sajesh_cv.pdf', // Add your resume file URL if you want the download button
+    fileUrl: 'sajesh_cv.pdf', // Add your resume file URL if you want the download button
   },
   skills: [
     'C#',
@@ -220,7 +220,7 @@ const CONFIG = {
     snippetVersion: 6,
   },
   themeConfig: {
-    defaultTheme: 'bumblebee',
+    defaultTheme: 'corporate',
 
     // Hides the switch in the navbar
     // Useful if you want to support a single color mode

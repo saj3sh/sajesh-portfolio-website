@@ -6,12 +6,19 @@ const ListItem = ({
   time,
   degree,
   institution,
+  selected,
+  id,
 }: {
   time: React.ReactNode;
   degree?: React.ReactNode;
   institution?: React.ReactNode;
+  selected?: boolean;
+  id?: string;
 }) => (
-  <li className="mb-5 ml-4">
+  <li
+    className={`mb-5 ml-4 ${selected ? 'bg-primary bg-opacity-10 rounded' : ''}`}
+    id={id || undefined}
+  >
     <div
       className="absolute w-2 h-2 bg-base-300 rounded-full border border-base-300 mt-1.5"
       style={{ left: '-4.5px' }}
@@ -29,6 +36,16 @@ const EducationCard = ({
   loading: boolean;
   educations: SanitizedEducation[];
 }) => {
+  const [selected, setSelected] = React.useState(false);
+  React.useEffect(() => {
+    const handleHashChange = () => {
+      setSelected(window.location.hash === '#education');
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    handleHashChange();
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
   const renderSkeleton = () => {
     const array = [];
     for (let index = 0; index < 2; index++) {
@@ -53,7 +70,7 @@ const EducationCard = ({
   };
 
   return (
-    <div className="card shadow-lg compact bg-base-100">
+    <div id="education-card" className="card shadow-lg compact bg-base-100">
       <div className="card-body">
         <div className="mx-3">
           <h5 className="card-title">

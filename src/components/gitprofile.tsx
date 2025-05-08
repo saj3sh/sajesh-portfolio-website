@@ -28,6 +28,7 @@ import { GithubProject } from '../interfaces/github-project';
 import BlogCard from './blog-card';
 import PublicationCard from './publication-card';
 import GithubProjectCard from './github-project-card';
+import Navbar from './navbar';
 
 /**
  * Renders the GitProfile component.
@@ -179,7 +180,8 @@ const GitProfile = ({ config }: { config: Config }) => {
 
   return (
     <HelmetProvider>
-      <div className="fade-in h-screen">
+      <Navbar />
+      <div className="mt-12 fade-in h-screen">
         {error ? (
           <ErrorPage
             status={error.status}
