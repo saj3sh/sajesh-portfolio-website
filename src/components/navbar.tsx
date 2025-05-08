@@ -10,16 +10,6 @@ const NAV_LINKS = [
   { label: 'Articles', ids: ['blog-card'] },
 ];
 
-// Enhance manual scrolling detection to include touch gestures
-let isScrollingManually = false;
-
-const setManualScroll = () => {
-  isScrollingManually = true;
-  setTimeout(() => {
-    isScrollingManually = false;
-  }, 100); // Reset after a short delay to avoid false positives
-};
-
 // window.addEventListener('scroll', () => {
 //   if (!isScrollingManually) return;
 

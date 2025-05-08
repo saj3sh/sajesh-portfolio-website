@@ -36,7 +36,7 @@ const EducationCard = ({
   loading: boolean;
   educations: SanitizedEducation[];
 }) => {
-  const [selected, setSelected] = React.useState(false);
+  const [_, setSelected] = React.useState(false);
   React.useEffect(() => {
     const handleHashChange = () => {
       setSelected(window.location.hash === '#education');
