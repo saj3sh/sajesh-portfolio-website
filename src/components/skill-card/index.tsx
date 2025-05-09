@@ -39,11 +39,7 @@ const SkillCard = ({
               : skills.map((skill, index) => (
                   <div
                     key={index}
-                    className="m-1 text-xs inline-flex items-center font-bold leading-sm px-3 py-1 rounded-full"
-                    style={{
-                      backgroundColor: '#888', // Tailwind gray-500
-                      color: '#fff',
-                    }}
+                    className="skill-tag badge badge-lg p-3 badge-ghost my-1 mx-1"
                   >
                     {skill}
                   </div>

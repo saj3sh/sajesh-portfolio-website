@@ -150,3 +150,44 @@ svg {
   -webkit-text-fill-color: transparent;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
+/* Skill tag animations */
+.skill-tag {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skill-tag::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.skill-tag:hover::after {
+  left: 100%;
+}
+
+/* Social link animations */
+.social-link {
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  transform: scale(1.05);
+  color: var(--primary);
+}

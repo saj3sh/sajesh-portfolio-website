@@ -3,6 +3,7 @@ import {
   AiFillGithub,
   AiFillInstagram,
   AiFillMediumSquare,
+  AiOutlineLink,
 } from 'react-icons/ai';
 import { CgDribbble } from 'react-icons/cg';
 import {
@@ -78,14 +79,19 @@ const ListItem: React.FC<{
           wordBreak: 'break-word',
         }}
       >
-        <a
-          href={link}
-          target="_blank"
-          rel="noreferrer"
-          className="flex justify-start py-2 px-1 items-center"
-        >
-          {value}
-        </a>
+        {link ? (
+          <a
+            href={link}
+            target="_blank"
+            rel="noreferrer"
+            className="social-link flex items-center gap-1 hover:text-primary transition-colors"
+          >
+            {value}
+            <AiOutlineLink className="inline-block opacity-70" size={14} />
+          </a>
+        ) : (
+          value
+        )}
       </div>
     </div>
   );

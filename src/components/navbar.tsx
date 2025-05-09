@@ -115,7 +115,7 @@ const Navbar = () => {
           {NAV_LINKS.map((link) => (
             <li key={link.label}>
               <button
-                className={`py-2 px-3 rounded-none border-b-2 transition-colors duration-200 focus:outline-none bg-transparent shadow-none text-base-content ${'border-transparent hover:border-base-300'}`}
+                className={`nav-link py-2 px-3 rounded-none transition-colors duration-200 focus:outline-none bg-transparent shadow-none text-base-content ${'border-transparent hover:border-base-300'}`}
                 onClick={() => handleNavClick(link.label)}
               >
                 {link.label}
